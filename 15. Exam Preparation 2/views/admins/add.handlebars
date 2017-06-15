@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <th>Id:</th>
+    <th>Username: </th>
+    <th>Full Name:</th>
+    <th>Roles:</th>
+    <th>Make Admin</th>
+  </tr>
+  {{#each users}}
+    <tr>
+      <td>{{this._id}}</td>
+      <td>{{this.username}}</td>
+      <td>{{this.firstName}} {{this.lastName}}</td>
+      <td>{{this.roles}}</td>
+      <td>
+        {{#if this.isAdmin}}
+          <form action="admin-remove/{{this._id}}" method='POST'>
+            <input type="submit" value='Remove Role'>
+          </form>
+        {{else}}
+          <form action="admin-add/{{this._id}}" method='POST'>
+            <input type="submit" value='Make Admin'>
+          </form>
+        {{/if}}
+
+      </td>
+    </tr>
+  {{/each}}
+</table>

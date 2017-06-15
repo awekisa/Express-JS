@@ -1,0 +1,32 @@
+<h1>Show By Tag "{{tag}}"</h1>
+
+{{#each images}}
+    <div class="post-container">
+      <img src="{{this.image}}">
+      <p>{{this.description}}</p>
+      <p>{{this.author.username}}</p>
+      <p>Views: {{this.views}}</p>
+      <p>Likes: {{this.likes.length}}</p>
+      {{#if ../currentUser}}
+        {{#if this.isLiked}}
+          <a href="/dislike/{{this._id}}?url={{../query}}">Dislike</a><br>
+        {{else}}
+          <a href="/like/{{this._id}}?url={{../query}}">Like</a><br>
+        {{/if}}
+      {{/if}}
+      {{#if ../isAdmin}}
+        <a href="/image-edit/{{this._id}}">Edit</a>
+        <a href="/image-delete/{{this._id}}">Delete</a>
+      {{/if}}
+    </div>
+  {{/each}}
+
+    <div class="paging-buttons">
+    {{#if hasPrevPage}}
+      <a href='/?page={{prevPage}}'>&lt;&lt;</a>
+      &nbsp;&nbsp;&nbsp;
+    {{/if}}
+    {{#if hasNextPage}}
+      <a href='/?page={{nextPage}}'>&gt;&gt;</a>
+    {{/if}}
+</section>

@@ -1,0 +1,15 @@
+<section class='profile-info'>
+    <h2>{{author.username}}</h2>
+    <div class='user-threads'>
+      <h3>Threads started by {{author.username}}</h3>
+      {{#each threads}}
+        <a href='/post/{{this._id}}/{{this.title}}'>{{this.title}}</a><br>
+      {{/each}}
+    </div>
+    <div class='user-posts'>
+      <h3>Posts by {{author.username}}</h3>
+      {{#each posts}}
+        <span class='post-span'>{{this.text}}</span><span class='thread-span'>from the thread: <a href='/post/{{this.thread._id}}/{{this.thread.title}}'>{{this.thread.title}}</a><br></span>
+      {{/each}}
+    </div>
+</section>

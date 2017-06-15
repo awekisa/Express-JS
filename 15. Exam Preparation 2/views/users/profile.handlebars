@@ -1,0 +1,32 @@
+<h2>Tweets by {{author}}</h2>
+
+<section class="tweets-section">
+  {{#each tweets}}
+    <div class="tweet-container">
+      <p>{{this.message}}</p>
+      <p>{{this.author.username}}</p>
+      <p>Views: {{this.views}}</p>
+      <p>Likes: {{this.likes.length}}</p>
+      {{#if ../currentUser}}
+        {{#if this.isLiked}}
+          <a href="/dislike/{{this._id}}">Dislike</a><br>
+        {{else}}
+          <a href="/like/{{this._id}}">Like</a><br>
+        {{/if}}
+      {{/if}}
+      {{#if ../isAdmin}}
+        <a href="/tweet-edit/{{this._id}}">Edit</a>
+        <a href="/tweet-delete/{{this._id}}">Delete</a>
+      {{/if}}
+    </div>
+  {{/each}}
+
+    <div class="paging-buttons">
+    {{#if hasPrevPage}}
+      <a href='/?page={{prevPage}}'>&lt;&lt;</a>
+      &nbsp;&nbsp;&nbsp;
+    {{/if}}
+    {{#if hasNextPage}}
+      <a href='/?page={{nextPage}}'>&gt;&gt;</a>
+    {{/if}}
+</section>

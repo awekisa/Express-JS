@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-exercises",
+  "version": "1.0.0",
+  "description": "mongodb exercises",
+  "engine": {
+    "node": "7.10.0",
+    "npm": "4.2.0"
+  },
+  "main": "index.js",
+  "author": "awesomeo",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "1.1.1",
+    "mongoose": "^4.10.3"
+  }
+}

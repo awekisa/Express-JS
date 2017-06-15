@@ -1,0 +1,39 @@
+<table>
+  <tr>
+    <th>
+      Car
+    </th>
+    <th>
+      Date
+    </th>
+    <th>
+      Price Per Day
+    </th>
+    <th>
+      Rented
+    </th>
+    
+    <th>
+      Actions
+    </th>
+  </tr>
+  {{#each cars}}
+    <tr>
+      <td>
+        {{this.make}} {{this.model}} ({{this.year}})
+      </td>
+      <td>
+        {{this.createOn}}
+      </td>
+      <td>
+        {{this.pricePerDay}}
+      </td>  
+      <td>
+        {{this.isRented}}
+      </td>
+      <td>
+        <a href='/cars/edit/{{this._id}}'>Edit</a>
+      </td>
+    </tr>
+  {{/each}}
+</table>

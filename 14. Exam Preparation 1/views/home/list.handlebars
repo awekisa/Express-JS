@@ -1,0 +1,27 @@
+<form action="/list" method="GET">
+  <input type="text" name="search" />
+  <input type="submit" value="Search">
+</form>
+<section class='threads-container'>
+  {{#each threads}}
+    <div class='thread-container'>
+      <label>Title: </label>
+      <p class='title'>{{this.title}}</p>
+      <label>Description: </label>
+      <p class='descrition'>{{this.description}}</p>
+      <label>Views:</label><br>
+      <p class='views'>{{this.views}}</p>
+      <label>Likes:</label><br>
+      <p class='views'>{{this.likes.length}}</p>
+      {{#if ../currentUser}}
+        {{#if isLiked}}
+          <a href='/dislike/{{this._id}}'>Dislike</a><br>
+        {{else}}
+          <a href='/like/{{this._id}}'>Like</a><br>
+        {{/if}}
+      {{/if}}
+      <a href='profile/{{this.author._id}}'>{{this.author.username}}</a><br>
+      <a href='/post/{{this._id}}/{{this.title}}'>See More</a>
+    </div>
+  {{/each}}
+</section>

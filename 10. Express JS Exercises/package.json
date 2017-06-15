@@ -1,0 +1,19 @@
+{
+  "name": "expresjs-exercises",
+  "version": "1.0.0",
+  "description": "expresjs exercises",
+  "main": "index.js",
+  "engine": {
+    "node": "7.10.0",
+    "npm": "4.2.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.17.2",
+    "express": "4.15.3",
+    "mongoose": "4.10.4",
+    "multer": "1.3.0",
+    "pug": "2.0.0-rc.2"
+  }
+}

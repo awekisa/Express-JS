@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+
+  h2=`All ${genre.name}`
+  .cards
+  each game in genre.games
+    .game-card
+      img.game-logo(src=`${game.logo}`)
+      h2=game.name
+      p=game.description
+      
+      a.btn.btn-small.btn-success(href=`/game/buy/${game._id}`)= 'Buy'
+      a.btn.btn-small.btn-warning(href=`/game/edit/${game._id}`)= 'Edit'
+      a.btn.btn-small.btn-danger(href=`/game/delete/${game._id}`)= 'Delete'

@@ -1,0 +1,27 @@
+h1 {
+  color: red
+}
+.container {
+  padding-left: 25%
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block
+}
+.menu li:after {
+  content: "\00a0";
+}
+.mb60 {
+  margin-bottom: 60px;
+  border-bottom: 1px solid grey;
+  padding: 20px;
+}
+.mb60 img {
+  width: 50%;
+}
+.paging-buttons{
+  font-size: 3em;
+}

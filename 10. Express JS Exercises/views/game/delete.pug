@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  form.form.center-form(method='post', enctype='multipart/form-data')
+    h2 Delete Game
+    .form-group
+      label
+      .game-card
+        img.game-logo(src=`${game.logo}`)
+    .form-group
+      label(for='name') Name
+      input#name.input-field(name='name', type='text', value=game.name disabled )
+    .form-group
+      label(for='description') Description
+      textarea#description.input-field(name='description', type='text' disabled )= game.description
+    .form-group
+      input.form-btn.btn.btn-danger(type='submit', value='Delete')

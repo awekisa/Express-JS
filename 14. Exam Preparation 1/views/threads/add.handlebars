@@ -1,0 +1,13 @@
+<form action="/thread/add" method='POST'>
+  <label>Title:</label>
+  <input type="text" name='title'>
+  <label>Description:</label>
+  <input type="text" name='description'>
+  <label>Category:</label>
+  <select name="category">
+    {{#each categories}}
+      <option value="{{this.name}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+  <input type="submit" value='Add Thread'>
+</form>

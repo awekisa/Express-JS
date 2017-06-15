@@ -1,0 +1,38 @@
+<section class='thread-container'>
+  <div class='thread-info'>
+    <h2>{{thread.title}}</h2>
+    <h3>{{thread.author.username}}</h3>
+    <p>{{thread.description}}</p>
+    {{#if isAdmin}}
+          <div class='admin-buttons'>
+            <a href="/thread-delete/{{thread._id}}">Delete</a>
+            <a href="/thread-edit/{{thread._id}}">Edit</a>
+          </div>
+        {{/if}}
+  </div>
+
+    <section class='post-form'>
+    <form  action="/post/{{thread._id}}/{{thread.title}}" method='POST'>
+      <textarea name='text' rows="5" placeholder="Your Comment:">{{text}}</textarea>
+      <input type="submit" value="Comment">
+    </form>
+  </section>
+  <section class="comments">
+    {{#each posts}}
+      <div class='post-container'>
+        <p>{{this.text}}</p>
+        <h2>{{this.author.username}}</h2>
+        {{#if ../isAdmin}}
+          <div class='admin-buttons'>
+            <a href="/post-delete/{{this._id}}">Delete</a>
+            <a href="/post-edit/{{this._id}}">Edit</a>
+          </div>
+        {{/if}}
+      </div>
+    {{else}}
+      <div class='post-container'>
+        <p>No comments yet.</p>
+      </div>
+    {{/each}}
+  </section>
+</section>

@@ -1,0 +1,42 @@
+<h1>Forum System</h1>
+<form action="/" method="GET">
+  <input type="text" name="search" />
+  <input type="submit" value="Search">
+</form>
+<section class='threads-container'>
+  {{#each threads}}
+    <div class='thread-container'>
+      <label>Title: </label>
+      <p class='title'>{{this.title}}</p>
+      <label>Description: </label>
+      <p class='descrition'>{{this.description}}</p>
+      <label>Views:</label><br>
+      <p class='views'>{{this.views}}</p>
+      <label>Likes:</label><br>
+      <p class='views'>{{this.likes.length}}</p>
+      {{#if ../currentUser}}
+        {{#if isLiked}}
+          <a href='/dislike/{{this._id}}'>Dislike</a><br>
+        {{else}}
+          <a href='/like/{{this._id}}'>Like</a><br>
+        {{/if}}
+      {{/if}}
+      <a href='profile/{{this.author._id}}'>{{this.author.username}}</a><br>
+      <a href='/post/{{this._id}}/{{this.title}}'>See More</a>
+    </div>
+  {{else}}
+    <div class='thread-container'>
+      <h2>No threads</h2>
+    </div>
+  {{/each}}
+</section>
+
+<div class="paging-buttons">
+  {{#if hasPrevPage}}
+    <a href='/?page={{prevPage}}&search={{search}}'>&lt;&lt;</a>
+    &nbsp;&nbsp;&nbsp;
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href='/?page={{nextPage}}&search={{search}}'>&gt;&gt;</a>
+  {{/if}}
+</div>

@@ -1,0 +1,27 @@
+h1 {
+  color: red
+}
+.container {
+  
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block
+}
+.menu li:after {
+  content: "\00a0";
+}
+.tweets-section {
+  padding: 10px;
+}
+.tweet-container {
+  display:inline-block;
+  border: 1px solid green;
+  width: 20%;
+  box-shadow: 2px 2px 2px greenyellow;
+  margin: 5px;
+  padding: 0 5px;
+}

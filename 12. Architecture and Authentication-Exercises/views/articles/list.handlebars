@@ -1,0 +1,57 @@
+<form action="/articles/list" method="GET">
+  <input type="text" name="search" />
+  <input type="submit" value="Search">
+</form>
+
+<table>
+  <tr>
+    <th>
+      Number
+    </th>
+    <th>
+      Title
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Date
+    </th>
+    <th>
+      Actions
+    </th>
+  </tr>
+
+
+{{#each articles}}
+  <tr>
+    <td>{{this.num}}</td>
+    <td>{{this.title}}</td>
+    <td>{{this.description}}</td>
+    <td>{{this.date}}</td>
+    <td>
+      <a href='/articles/details/{{this._id}}'>Details</a>
+      {{#if this.enableEdit}}
+        <a href='/articles/edit/{{this._id}}'>Edit</a>
+      {{/if}}
+      {{#if this.enableDelete}}
+        <a href='/articles/delete/{{this._id}}'>Delete</a>
+      {{/if}}
+    </td>
+  </tr>
+{{else}}
+  <tr><td colspan='5'>No articles available</h2></tr>
+{{/each}}
+
+</table>
+
+
+<div class="paging-buttons">
+  {{#if hasPrevPage}}
+    <a href='/articles/list?page={{prevPage}}&search={{search}}'>&lt;&lt;</a>
+    &nbsp;&nbsp;&nbsp;
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href='/articles/list?page={{nextPage}}&search={{search}}'>&gt;&gt;</a>
+  {{/if}}
+</div>

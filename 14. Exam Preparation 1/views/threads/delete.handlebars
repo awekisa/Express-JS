@@ -1,0 +1,18 @@
+<form action="/thread-delete/{{id}}" method="POST">
+  <label>Title:</label>
+  <input type="text" name='title' value="{{title}}" disabled>
+  <label>Description:</label>
+  <input type="text" name='description' value="{{description}}" disabled>
+  <label>Category:</label>
+  <select name="category">
+    {{#each categories}}
+      {{#if this.checked}}
+        <option value="{{this.name}}">{{this.name}}</option>
+      {{/if}}
+    {{/each}}
+  </select>
+  <input type="submit" value="Delete Thread">
+</form>
+
+
+ 

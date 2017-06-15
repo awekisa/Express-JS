@@ -1,0 +1,15 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "server app",
+  "main": "index.js",
+  "author": "awesomeo",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0"
+  }
+}

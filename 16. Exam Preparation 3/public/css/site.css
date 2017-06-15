@@ -1,0 +1,35 @@
+h1 {
+
+}
+.container section {
+
+}
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block
+}
+.menu li:after {
+  content: "\00a0";
+}
+.instagram-section {
+  width: 83%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.post-container {
+  text-align: center;
+  display:inline-block;
+  vertical-align: top;
+  border: 1px solid green;
+  width: 300px;
+  box-shadow: 2px 2px 2px greenyellow;
+  margin: 5px;
+  padding: 5px;
+}
+.post-container img {
+  width: 280px;
+  height: 200px;
+}

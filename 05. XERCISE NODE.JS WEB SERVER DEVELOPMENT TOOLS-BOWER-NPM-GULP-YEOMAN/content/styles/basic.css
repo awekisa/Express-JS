@@ -1,0 +1,57 @@
+body > main > div {
+  margin-bottom: 30px;
+}
+
+body > main > div > a {
+  margin: 0 10px;
+  border: 1px dotted red;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: red;
+  text-decoration: none;
+}
+body > main > div > a:hover {
+  background-color: red;
+  color: white;
+}
+
+.image {
+  display: inline-block;
+  box-shadow: 2px 2px 2px 2px grey;
+  margin: 5px 10px;
+  padding: 5px 20px;
+  width: 200px;
+}
+
+.image h2, .image p {
+  text-align: center
+}
+.image h2 {
+  text-transform: capitalize;
+}
+
+
+.image-section {
+  width: 100%;
+  text-align: center;
+}
+
+.image-single {
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  box-shadow: 2px 2px 2px 2px grey;
+}
+
+.image-single h2, .image-single p {
+  text-align: center
+}
+.image-single h2 {
+  text-transform: capitalize;
+}
+
+.back-btn {
+  display:block;
+  text-align: center;
+  text-transform: capitalize;
+  color: #E8AB0C;
+}

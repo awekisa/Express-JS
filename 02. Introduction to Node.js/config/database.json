@@ -1,0 +1,37 @@
+[
+  {
+    "name": "123",
+    "description": "213",
+    "price": "123",
+    "image": "",
+    "id": 1
+  },
+  {
+    "name": "666",
+    "description": "666",
+    "price": "666",
+    "image": "",
+    "id": 2
+  },
+  {
+    "name": "34",
+    "description": "343",
+    "price": "3434",
+    "image": "",
+    "id": 3
+  },
+  {
+    "name": "dfs",
+    "description": "sdasd",
+    "price": "12",
+    "image": "/content/images/rkW2WinWb",
+    "id": 4
+  },
+  {
+    "name": "asdas",
+    "description": "sad",
+    "price": "",
+    "image": "/content/images/ry6BzonWW",
+    "id": 5
+  }
+]

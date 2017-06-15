@@ -1,0 +1,12 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "node exercises",
+  "main": "index.js",
+  "engine": "7.1.0",
+  "author": "awesomeo",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "1.1.1"
+  }
+}

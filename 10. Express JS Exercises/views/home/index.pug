@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content
+  h1.head-title Welcome to GameCatalog!
+  form#search-form
+    input(type='text', name='query', placeholder='Search...')
+    input(type='submit', value='Search')
+  .cards
+    each game in games
+      .game-card
+        img.game-logo(src=`${game.logo}`)
+        h2=game.name
+        p=game.description
+
+        a.btn.btn-small.btn-success(href=`/game/buy/${game._id}`)= 'Buy'
+        a.btn.btn-small.btn-warning(href=`/game/edit/${game._id}`)= 'Edit'
+        a.btn.btn-small.btn-danger(href=`/game/delete/${game._id}`)= 'Delete'
+        a.btn.btn-small.btn-primary(href=`/genre/${game.genre.name}/games`)
+         =`More ${game.genre.name}`
+
